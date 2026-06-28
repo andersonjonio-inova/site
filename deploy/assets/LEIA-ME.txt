@@ -1,0 +1,14 @@
+INOVA PÚBLICA — site estático (HTML/CSS/JS puro, sem build).
+
+PÁGINAS
+- index.html ....... página principal
+- quem-somos.html .. quem somos / fundadores
+
+COMO PUBLICAR (escolha uma)
+- Netlify: acesse app.netlify.com/drop e arraste esta pasta inteira.
+- Cloudflare Pages / Vercel: importe esta pasta como projeto estático.
+- GitHub Pages: suba os arquivos num repositório e ative o Pages.
+- Hospedagem tradicional (cPanel/FTP): envie todo o conteúdo para public_html.
+
+Não requer servidor nem back-end. O formulário de contato abre o WhatsApp.
+Os vídeos têm preload desativado (só baixam ao dar play).

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quem Somos — Inova Pública</title>
+<meta name="description" content="Quem somos: os fundadores da Inova Pública e a declaração de propósito que move o novo DNA do serviço público.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f4f4; --ink:#11061d;
+    --c1:#561ea2; --c2:#922092; --c3:#321cab;
+    --muted:#5a4f66; --card:#ffffff; --soft:#ece8f3;
+    --gold:#C2A14D; --gold-deep:#A8893A;
+    --radius:.7rem; --shadow:0 .5rem 1.4rem rgba(50,28,171,.14);
+    --serif:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.65;font-size:16px;overflow-x:hidden}
+  h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.18;font-weight:700;letter-spacing:-.01em}
+  a{text-decoration:none;color:var(--c1)}
+  img{max-width:100%;display:block}
+  .container{max-width:1140px;margin:0 auto;padding:0 18px}
+  .btn{display:inline-block;padding:.75rem 1.6rem;border-radius:var(--radius);font-weight:700;transition:.3s;cursor:pointer;border:none;font-family:var(--sans);font-size:1rem}
+  .btn-primary{background:var(--c1);color:#fff}
+  .btn-primary:hover{background:var(--c3)}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid #fff}
+  .btn-ghost:hover{background:#fff;color:var(--c1)}
+  .btn-sm{padding:.55rem 1.1rem;font-size:.9rem}
+  .gold-rule{width:56px;height:3px;background:var(--gold);border-radius:2px;margin:.1rem auto 1.4rem}
+
+  /* HEADER */
+  header.site{position:fixed;top:0;left:0;right:0;background:#fff;box-shadow:0 1px 14px rgba(17,6,29,.08);z-index:100}
+  header.site .container{display:flex;align-items:center;justify-content:space-between;gap:.7rem;height:74px}
+  .logo{display:flex;align-items:center;gap:.55rem;font-family:var(--serif);font-weight:700;font-size:clamp(1.05rem,4.4vw,1.4rem);color:var(--ink);white-space:nowrap;flex:0 0 auto;min-width:0}
+  .logo .mark{width:40px;height:40px;border-radius:.6rem;background:linear-gradient(135deg,var(--c1),var(--c2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem}
+  .logo .logomark{height:clamp(34px,8.5vw,44px);width:auto;display:block;flex:0 0 auto}
+  .logo-name{white-space:nowrap}
+  .nav-actions{flex:0 0 auto}
+  .cta-header .cta-short{display:none}
+  nav.main ul{display:flex;gap:1.7rem;list-style:none}
+  nav.main a{color:var(--ink);font-weight:600;font-size:.95rem}
+  nav.main a:hover,nav.main a.active{color:var(--c1)}
+  .nav-actions{display:flex;align-items:center;gap:1rem}
+  .burger{display:none;font-size:1.6rem;background:none;cursor:pointer;color:var(--ink)}
+
+  /* HERO */
+  .hero{margin-top:74px;background:linear-gradient(120deg,#321cab 0%,#561ea2 50%,#922092 100%);position:relative;overflow:hidden;color:#fff}
+  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 25%,rgba(255,255,255,.16),transparent 55%)}
+  .hero .container{position:relative;z-index:2;padding:84px 18px;max-width:780px;margin-left:0}
+  .hero .eyebrow{text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;font-weight:700;color:#e7d6ff;margin-bottom:1rem}
+  .hero h1{color:#fff;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:900;line-height:1.08;letter-spacing:-.02em;margin-bottom:1.1rem;text-shadow:0 2px 14px rgba(0,0,0,.2)}
+  .hero p{font-size:1.15rem;max-width:600px;color:#f1ebfa}
+
+  /* FUNDADORES INTRO */
+  .founders-intro{padding:66px 0 8px;text-align:center;background:#fff}
+  .fundadores-img{max-width:940px;width:100%;margin:0 auto;border-radius:var(--radius);box-shadow:var(--shadow)}
+  .founders-intro .lead{max-width:780px;margin:1.9rem auto 0;font-size:1.18rem;color:#3d3447;line-height:1.7}
+  @media(max-width:620px){.founders-intro .lead{font-size:1.05rem}}
+
+  /* DECLARAÇÃO DE PROPÓSITO */
+  .declara{background:linear-gradient(120deg,#321cab,#561ea2 55%,#922092);color:#fff;padding:90px 0}
+  .declara .big{font-family:var(--serif);font-size:2.15rem;line-height:1.3;max-width:840px;margin:0 auto 1.8rem;text-align:center}
+  .declara .big .hl{color:#ffd98a}
+  .declara .body{max-width:760px;margin:0 auto;text-align:center}
+  .declara .body p{color:#efeafa;font-size:1.05rem;margin-bottom:1rem}
+  .declara .proposito{font-family:var(--serif);font-size:1.3rem;color:#fff;border-top:1px solid rgba(255,255,255,.22);padding-top:1.7rem;margin-top:1.8rem}
+
+  /* DNA FIGURA — refeita graficamente */
+  .dna-fig{padding:74px 0;text-align:center;background:linear-gradient(180deg,#fff 0%,#faf8fd 100%)}
+  .dna-fig .intro{max-width:760px;margin:0 auto 2.4rem}
+  .dna-fig h2{font-size:clamp(1.7rem,4.6vw,2.4rem);margin-bottom:1rem}
+  .dna-fig .sub{color:var(--muted)}
+  .dna-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem;max-width:1040px;margin:0 auto;text-align:left}
+  .dna-card{position:relative;background:var(--card);border:1px solid #ece6f4;border-radius:1rem;padding:2.1rem 1.7rem;box-shadow:0 .5rem 1.4rem rgba(50,28,171,.08);transition:transform .3s ease,box-shadow .3s ease;overflow:hidden}
+  .dna-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--c1),var(--c2))}
+  .dna-card:nth-child(2)::before{background:linear-gradient(90deg,var(--c3),var(--c1))}
+  .dna-card:nth-child(3)::before{background:linear-gradient(90deg,var(--c2),var(--c3))}
+  .dna-card:hover{transform:translateY(-6px);box-shadow:0 1rem 2.2rem rgba(50,28,171,.16)}
+  .dna-ico{width:64px;height:64px;border-radius:1rem;display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:1.2rem;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 .5rem 1rem rgba(86,30,162,.25)}
+  .dna-card:nth-child(2) .dna-ico{background:linear-gradient(135deg,var(--c3),var(--c1))}
+  .dna-card:nth-child(3) .dna-ico{background:linear-gradient(135deg,var(--c2),var(--c3))}
+  .dna-ico .ic{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .dna-card h3{font-size:1.28rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.7rem}
+  .dna-tag{font-family:var(--sans);font-weight:700;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);background:rgba(194,161,77,.14);padding:.16rem .55rem;border-radius:1rem}
+  .dna-card p{color:var(--muted);font-size:.96rem;line-height:1.6}
+
+  /* FUNDADORES */
+  .founders{padding:84px 0;background:var(--soft)}
+  .intro{text-align:center;max-width:760px;margin:0 auto 1rem}
+  .intro h2{font-size:1.9rem;margin-bottom:1rem}
+  .intro .sub{color:var(--muted)}
+  .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;max-width:1020px;margin:2.6rem auto 0}
+  .founder{background:var(--card);border:1px solid #e7e2ef;border-top:3px solid var(--gold);border-radius:var(--radius);padding:1.9rem 1.5rem;text-align:center;transition:.3s}
+  .founder:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:transparent;border-top-color:var(--gold)}
+  .founder img{width:132px;height:132px;border-radius:50%;object-fit:cover;margin:0 auto 1rem;background:linear-gradient(135deg,var(--c1),var(--c2))}
+  .founder h3{font-size:1.15rem;margin-bottom:.35rem}
+  .founder .role{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-deep);background:rgba(194,161,77,.14);padding:.2rem .65rem;border-radius:1rem;margin-bottom:.8rem}
+  .founder p{font-size:.9rem;color:var(--muted);line-height:1.55}
+
+  /* MISSÃO / VISÃO */
+  .mv{padding:80px 0;background:#fff}
+  .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;max-width:920px;margin:0 auto}
+  .mv-card{background:var(--soft);border-radius:var(--radius);padding:2rem}
+  .mv-card .tag{font-weight:700;color:var(--gold-deep);letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin-bottom:.6rem}
+  .mv-card p{font-size:1.02rem;color:#3d3447}
+
+  /* CTA */
+  .cta{padding:74px 0;text-align:center;background:var(--soft)}
+  .cta h2{font-size:1.8rem;margin-bottom:.6rem}
+  .cta p{color:var(--muted);margin-bottom:1.6rem}
+
+  /* FOOTER */
+  footer.site{background:var(--ink);color:#d6cfe0;padding:64px 0 26px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.3fr;gap:2.5rem;margin-bottom:2.5rem}
+  footer.site h4{color:#fff;font-family:var(--serif);margin-bottom:1rem;font-size:1.08rem}
+  footer.site ul{list-style:none}
+  footer.site li{margin-bottom:.6rem}
+  footer.site a,footer.site p{color:#d6cfe0;font-size:.93rem;margin-bottom:.5rem}
+  footer.site a:hover{color:#fff}
+  .social a{display:inline-block;margin-right:.8rem}
+  .copy{border-top:1px solid rgba(255,255,255,.14);padding-top:1.4rem;text-align:center;font-size:.82rem;color:#a99cbb}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .fgrid{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .hero h1{font-size:2.2rem}
+    .declara .big{font-size:1.8rem}
+  }
+  @media(max-width:620px){
+    nav.main{display:none;position:absolute;top:74px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(14px) saturate(1.5);-webkit-backdrop-filter:blur(14px) saturate(1.5);box-shadow:0 14px 26px rgba(17,6,29,.12);border-top:1px solid #ece8f3}
+    nav.main ul{flex-direction:column;gap:0;padding:.3rem 0}
+    nav.main li{border-bottom:1px solid #f1edf7}
+    nav.main li:last-child{border-bottom:none}
+    nav.main a{display:block;padding:.9rem 18px;font-size:1rem}
+    .burger{display:block}
+    .cta-header .cta-full{display:none}
+    .cta-header .cta-short{display:inline}
+    .cta-header{padding:.52rem .95rem}
+    .fgrid,.mv-grid,.foot-grid,.dna-grid{grid-template-columns:1fr}
+    .hero .container{padding:60px 18px}
+    .hero h1{font-size:1.85rem}
+    .declara .big{font-size:1.55rem}
+    section{scroll-margin-top:74px}
+  }
+  @media(max-width:380px){
+    .logo{font-size:1rem}.logo .logomark{height:30px}
+    .hero h1{font-size:1.65rem}
+    .cta-header{padding:.46rem .72rem;font-size:.8rem}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <a class="logo" href="index.html"><img class="logomark" src="assets/img/logo-inova.png" alt="Inova Pública"> <span class="logo-name">Inova Pública</span></a>
+    <nav class="main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="index.html#programas">Programas</a></li>
+        <li><a href="index.html#portfolio">Portfólio</a></li>
+        <li><a href="index.html#resultados">Resultados</a></li>
+        <li><a href="index.html#proposta">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm cta-header" href="index.html#proposta"><span class="cta-full">Solicitar proposta</span><span class="cta-short">Proposta</span></a>
+      <button class="burger" aria-label="menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Quem Somos</p>
+    <h1>Servidores que entendem o serviço público por dentro.</h1>
+  </div>
+</section>
+
+<!-- FUNDADORES (imagem + intro) -->
+<section class="founders-intro">
+  <div class="container">
+    <img class="fundadores-img" src="assets/img/fundadores-inova.jpg" alt="Os fundadores da Inova Pública">
+  </div>
+</section>
+
+<!-- DECLARAÇÃO DE PROPÓSITO -->
+<section class="declara">
+  <div class="container">
+    <p class="big">O serviço público não nasceu para ser uma máquina. <span class="hl">Nasceu para servir.</span></p>
+    <div class="body">
+      <p>Com o tempo, foi sendo engessado e esvaziado de sentido. A Inova Pública surge para lembrar o que nunca deveríamos ter esquecido: servir é um ato profundamente humano — é cuidar de vidas, ampliar possibilidades, transformar realidades.</p>
+      <p>Fazemos isso com quem conhece os códigos invisíveis das instituições públicas e acredita que a inovação mais potente é a que transforma a cultura, e não apenas o sistema. Porque o futuro do serviço público não está nos algoritmos: está na escuta, na colaboração e no servidor que se vê como parte da solução.</p>
+      <p class="proposito">Existimos para reescrever o DNA do serviço público — inspirando servidores e instituições a servir com propósito, inovar com sentido e transformar com impacto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DNA -->
+<section class="dna-fig" id="dna">
+  <div class="container">
+    <div class="intro">
+      <h2>O DNA da Inova Pública</h2>
+      <div class="gold-rule"></div>
+      <p class="sub">Somos uma rede de servidores que trabalham por mudanças reais, nas quais as pessoas são os agentes dessa mudança e, apoiadas em tecnologias digitais e humanas, promovem a inovação que gera valor público.</p>
+    </div>
+    <div class="dna-grid">
+      <article class="dna-card">
+        <div class="dna-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Pessoas <span class="dna-tag">Cultura</span></h3>
+        <p>Com abordagem leve, instigante e embasada, nossas palestras promovem as pessoas: líderes e equipes assumindo o protagonismo frente aos desafios apresentados.</p>
+      </article>
+      <article class="dna-card">
+        <div class="dna-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09Z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2Z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+        <h3>Inovação <span class="dna-tag">Liderança</span></h3>
+        <p>Apoiamos a liderança e as equipes na inovação do setor público, partindo da premissa de que inovar é servir com propósito: quando encontramos um “porquê”, inovamos no “como”.</p>
+      </article>
+      <article class="dna-card">
+        <div class="dna-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M9 2v2M15 20v2M9 20v2M2 15h2M2 9h2M20 15h2M20 9h2"/></svg></div>
+        <h3>Transformação Digital <span class="dna-tag">Efetividade</span></h3>
+        <p>Apoiamos líderes e equipes a aproveitar o potencial da transformação digital, repensando formas de trabalho e usando inteligência artificial e automação como aliadas estratégicas.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FUNDADORES -->
+<section class="founders" id="fundadores">
+  <div class="container">
+    <div class="intro">
+      <h2>Os fundadores da Inova Pública</h2>
+      <div class="gold-rule"></div>
+      <p class="sub">Servidores e especialistas que vivem os desafios do setor público — e os transformam em aprendizado prático, com autoridade e propósito.</p>
+    </div>
+    <div class="fgrid">
+      <figure class="founder">
+        <img src="assets/img/anderson-porto.png" alt="Ânderson Porto">
+        <h3>Ânderson Porto</h3>
+        <div class="role">Equipes Híbridas &amp; Negociação</div>
+        <p>+12 anos no Poder Judiciário. Mestrando em Gestão Pública (UnB), com formações em Negociação (FGV) e Design Thinking. Criador do Canvas de Negociação Criativa; condecorado com a Medalha do Pacificador e o Prêmio Ser Humano ABRH-DF.</p>
+      </figure>
+      <figure class="founder">
+        <img src="assets/img/jeanne-nogueira.png" alt="Jeanne Nogueira">
+        <h3>Jeanne Nogueira</h3>
+        <div class="role">Pessoas &amp; Lideranças</div>
+        <p>+10 anos em desenvolvimento de pessoas e cultura organizacional. Pedagoga (UnB), mestranda em Gestão Estratégica de Organizações e formada em Estruturas Libertadoras. Trajetória na Polícia Federal, TJDFT e STJ.</p>
+      </figure>
+      <figure class="founder">
+        <img src="assets/img/andre-fachin.png" alt="André Fachin">
+        <h3>André Fachin</h3>
+        <div class="role">Desenvolvimento Humano</div>
+        <p>+10 anos em liderança humanizada. Especialista em Neurociência, Psicologia Positiva e Mindfulness (PUC-PR). Une rigor científico e prática para construir ambientes mais saudáveis. Laboratorista do STJ LAB.</p>
+      </figure>
+      <figure class="founder">
+        <img src="assets/img/ricardo-marques.png" alt="Ricardo Marques">
+        <h3>Ricardo Marques</h3>
+        <div class="role">Liderança &amp; Transformação Digital</div>
+        <p>Facilitador na interseção entre tecnologia de ponta e desenvolvimento humano. Base jurídica somada a certificações em IA e comportamento. Membro da Comissão de Inteligência Artificial do STJ.</p>
+      </figure>
+      <figure class="founder">
+        <img src="assets/img/eduardo-cambuy.png" alt="Eduardo Cambuy">
+        <h3>Eduardo Cambuy</h3>
+        <div class="role">Inovação &amp; Facilitação</div>
+        <p>Vasta trajetória em gestão de pessoas e em projetos governamentais. Usa a criatividade para romper a resistência à mudança, criando dinâmicas gamificadas que engajam servidores em processos de transformação.</p>
+      </figure>
+      <figure class="founder">
+        <img src="assets/img/jorge-gomes.png" alt="Jorge Gomes">
+        <h3>Jorge Gomes</h3>
+        <div class="role">Ambidestria Organizacional</div>
+        <p>Bacharel em Direito, administrador e cientista de dados. Atua na fronteira entre a gestão de alto desempenho e as novas metodologias de inovação; liderou projetos de modernização nacional reconhecidos e premiados.</p>
+      </figure>
+      <figure class="founder">
+        <img src="assets/img/priscilla-curado.png" alt="Priscilla Curado">
+        <h3>Priscilla Curado</h3>
+        <div class="role">Educação Corporativa &amp; Inovação</div>
+        <p>Gestora pública e líder em educação corporativa e inovação no Poder Judiciário. Especialista em Administração (FGV). Experiência em direção de unidade estratégica e em programas de capacitação e gestão da mudança.</p>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- MISSÃO / VISÃO -->
+<section class="mv">
+  <div class="container">
+    <div class="intro">
+      <h2>Para onde caminhamos</h2>
+      <div class="gold-rule"></div>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card">
+        <div class="tag">Missão</div>
+        <p>Transformar pessoas, culturas e organizações públicas por meio de experiências formativas, inovação colaborativa e tecnologias éticas — ativando um novo DNA institucional centrado no cidadão.</p>
+      </div>
+      <div class="mv-card">
+        <div class="tag">Visão</div>
+        <p>Ser, até 2030, referência na criação do novo DNA do serviço público — desenvolvendo lideranças, práticas e ecossistemas capazes de unir tecnologia, empatia e valor público em larga escala.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Quer transformar a cultura do seu órgão?</h2>
+    <p>Conte seu desafio. Retornamos com uma proposta sob medida para o seu contexto.</p>
+    <a class="btn btn-primary" href="index.html#proposta">Solicitar proposta</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4>Inova Pública</h4>
+        <p>O novo DNA do serviço público.</p>
+        <p>Inovar é servir com propósito.</p>
+      </div>
+      <div>
+        <h4>Navegue</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="quem-somos.html">Quem Somos</a></li>
+          <li><a href="index.html#portfolio">Portfólio</a></li>
+          <li><a href="index.html#resultados">Resultados</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>📞 (31) 9 9153-5585</p>
+        <p>✉️ inovapublica.adm@gmail.com</p>
+        <div class="social" style="margin-top:.8rem">
+          <a href="#">Instagram @inova.publica</a><br>
+          <a href="#">YouTube @InovaPública</a><br>
+          <a href="#">LinkedIn Inova Pública</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">© Inova Pública — inovar é servir com propósito.</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.burger').addEventListener('click',function(){
+    var n=document.querySelector('nav.main');
+    n.style.display = n.style.display==='block'?'none':'block';
+  });
+  // Fecha o menu mobile ao tocar num link de navegação
+  document.querySelectorAll('nav.main a').forEach(function(a){
+    a.addEventListener('click',function(){
+      if(window.innerWidth<=620){ document.querySelector('nav.main').style.display='none'; }
+    });
+  });
+</script>
+</body>
+</html>
