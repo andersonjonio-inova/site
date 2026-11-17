@@ -16,3 +16,14 @@
 .facilitator-photo{width:min(100%,270px);height:280px;min-height:280px;aspect-ratio:auto;justify-self:center;background:#fff}
 .facilitator-photo img{position:relative;inset:auto;width:100%;height:100%;max-width:100%;min-height:0;object-fit:contain;object-position:center;transform:none;mix-blend-mode:normal}
 @media(max-width:640px){.facilitator-photo{width:min(100%,220px);height:230px;min-height:230px;aspect-ratio:auto}.facilitator-photo img{width:100%;height:100%;min-height:0}}
+
+/* Materiais complementares do curso */
+.resources-panel .resource-copy{grid-column:1;grid-row:1}
+.resources-panel .cora-card{grid-column:2;grid-row:1}
+.resource-downloads{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem;margin-top:.4rem}
+.resource-download{display:grid;grid-template-columns:42px 1fr 22px;align-items:center;gap:.8rem;min-height:92px;padding:1rem 1.05rem;border:1px solid rgba(255,247,233,.25);border-radius:1rem;background:rgba(255,248,235,.1);color:#fff7e9;text-decoration:none;transition:transform .22s ease,background .22s ease,border-color .22s ease}
+.resource-download:hover{transform:translateY(-3px);background:rgba(255,248,235,.17);border-color:rgba(241,202,123,.75)}
+.resource-icon{display:grid;width:40px;height:40px;place-items:center;border-radius:50%;background:linear-gradient(145deg,#e5bd6d,#f1dba1);color:var(--burgundy);font:1rem var(--serif)}
+.resource-download strong,.resource-download small{display:block}.resource-download strong{font:500 1.15rem var(--serif)}.resource-download small{margin-top:.25rem;color:rgba(255,247,233,.76);font-size:.72rem;line-height:1.35}.resource-download>b{color:#f1ca7b;font-size:1.2rem;text-align:center}
+@media(max-width:820px){.resources-panel .resource-copy,.resources-panel .cora-card,.resource-downloads{grid-column:1;grid-row:auto}.resource-downloads{grid-template-columns:1fr 1fr;margin-top:0}}
+@media(max-width:640px){.resource-downloads{grid-template-columns:1fr}.resource-download{min-height:82px}}
