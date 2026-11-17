@@ -3,287 +3,106 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#EEE3D3">
-  <title>Diga mesmo que doa | Inova Pública</title>
-  <meta name="description" content="Um percurso prático sobre feedback, escuta, comunicação não violenta e conversas difíceis.">
+  <meta name="theme-color" content="#6c1836">
+  <title>Diga mesmo que doa | Portal do curso</title>
+  <meta name="description" content="Um percurso de conversas de feedback que fortalecem relações, com coragem, escuta e cuidado.">
   <meta property="og:title" content="Diga mesmo que doa">
-  <meta property="og:description" content="Conversas honestas, com coragem e cuidado. Um percurso da Inova Pública.">
+  <meta property="og:description" content="Conversas de feedback que fortalecem relações.">
   <meta property="og:type" content="website">
-  <style>
-    :root {
-      --terracotta:#A65E45;
-      --sand:#D8B89C;
-      --ivory:#EEE3D3;
-      --olive:#777B5B;
-      --brown:#45352F;
-      --paper:#F7F1E8;
-      --ink:#342923;
-      --muted:#75675C;
-      --line:rgba(69,53,47,.15);
-      --shadow:0 18px 50px rgba(69,53,47,.09);
-      --serif:Georgia,"Times New Roman",serif;
-      --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--ink);
-      background:
-        radial-gradient(ellipse at 18% 8%,rgba(216,184,156,.22),transparent 34rem),
-        linear-gradient(180deg,var(--paper),var(--ivory));
-      font:16px/1.65 var(--sans);
-    }
-    a{color:inherit}
-    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
-    .topbar{padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:700;letter-spacing:.03em}
-    .brand-mark{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--terracotta);color:var(--paper);font:22px var(--serif)}
-    .brand small{display:block;font-size:10px;line-height:1.2;color:var(--muted);font-weight:600;letter-spacing:.14em;text-transform:uppercase}
-    .top-link{font-size:.88rem;text-decoration:none;border-bottom:1px solid var(--sand);padding:3px 0;color:var(--brown)}
-    .hero{position:relative;min-height:530px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px;padding:36px 0 76px}
-    .hero-copy{position:relative;z-index:1;max-width:620px}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--olive);text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:750}
-    .eyebrow:before{content:"";width:26px;height:1px;background:var(--terracotta)}
-    h1,h2,h3,p{margin-top:0}
-    h1{font:clamp(3.4rem,8vw,6.2rem)/.96 var(--serif);font-weight:500;letter-spacing:-.055em;color:var(--brown);margin:20px 0 18px;max-width:680px}
-    h1 em{color:var(--terracotta);font-weight:400}
-    .lead{font:clamp(1.15rem,2vw,1.35rem)/1.55 var(--serif);color:#65564B;max-width:510px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border:1px solid var(--terracotta);border-radius:999px;text-decoration:none;font-size:.91rem;font-weight:700;transition:transform .2s,background .2s,color .2s}
-    .button:hover{transform:translateY(-2px)}
-    .button-primary{background:var(--terracotta);color:#fffaf4}
-    .button-primary:hover{background:#8f4d38}
-    .button-light{background:rgba(247,241,232,.65);color:var(--brown);border-color:var(--sand)}
-    .art{min-height:390px;display:grid;place-items:center;position:relative}
-    .art:before{content:"";position:absolute;width:min(390px,90%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 34%,rgba(216,184,156,.3),rgba(238,227,211,.08) 65%,transparent 70%);border:1px solid rgba(166,94,69,.12)}
-    .dandelion{position:relative;width:min(440px,100%);height:auto;overflow:visible;filter:drop-shadow(0 14px 18px rgba(69,53,47,.08))}
-    .paper-note{position:absolute;right:0;bottom:11px;background:rgba(247,241,232,.84);border:1px solid rgba(69,53,47,.12);padding:10px 15px;border-radius:18px;color:var(--olive);font:italic 1rem var(--serif);transform:rotate(-3deg)}
-    .intro-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:27px 0;background:rgba(255,255,255,.22)}
-    .intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-    .intro-item{display:flex;gap:12px;align-items:flex-start}
-    .intro-num{font:1.45rem var(--serif);color:var(--terracotta);line-height:1}
-    .intro-item strong{display:block;font:1.1rem var(--serif);font-weight:500}
-    .intro-item span{display:block;color:var(--muted);font-size:.88rem;line-height:1.5;margin-top:3px}
-    section{padding:82px 0}
-    .section-head{max-width:680px;margin-bottom:34px}
-    .section-head h2{font:clamp(2.1rem,4vw,3.35rem)/1.08 var(--serif);font-weight:500;letter-spacing:-.035em;color:var(--brown);margin:13px 0}
-    .section-head p{color:var(--muted);max-width:620px;margin-bottom:0}
-    .days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-    .day-card{position:relative;overflow:hidden;background:rgba(255,252,247,.72);border:1px solid rgba(69,53,47,.14);border-radius:22px;padding:27px 28px 25px;box-shadow:0 8px 28px rgba(69,53,47,.045)}
-    .day-card:after{content:"";position:absolute;right:-34px;top:-42px;width:118px;height:118px;border-radius:50%;border:1px solid rgba(166,94,69,.14);box-shadow:0 0 0 13px rgba(216,184,156,.08),0 0 0 27px rgba(216,184,156,.05);pointer-events:none}
-    .day-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--olive);font-size:.73rem;font-weight:750;letter-spacing:.14em;text-transform:uppercase}
-    .range{color:var(--terracotta);background:rgba(166,94,69,.08);border-radius:99px;padding:4px 10px;letter-spacing:.03em;white-space:nowrap}
-    .day-card h3{font:1.7rem/1.15 var(--serif);font-weight:500;letter-spacing:-.025em;color:var(--brown);margin:18px 0 9px;max-width:440px}
-    .day-card p{color:var(--muted);font-size:.92rem;margin-bottom:17px;max-width:500px}
-    .topic-list{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
-    .topic-list li{font-size:.78rem;line-height:1.3;color:#65564B;background:#F0E6D9;border:1px solid rgba(69,53,47,.07);padding:7px 10px;border-radius:99px}
-    .topic-list li:nth-child(3n){background:#E6E8DB}
-    .day-note{margin-top:19px;padding-top:14px;border-top:1px solid var(--line);color:var(--olive);font-size:.8rem;font-weight:650}
-    .day-download{margin-top:16px;position:relative;z-index:1}
-    .resources{background:var(--brown);color:var(--paper);position:relative;overflow:hidden}
-    .resources:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-120px;top:-220px;border:1px solid rgba(238,227,211,.13);box-shadow:0 0 0 24px rgba(238,227,211,.025),0 0 0 48px rgba(238,227,211,.02)}
-    .resources .section-head{position:relative;z-index:1}
-    .resources .section-head h2{color:var(--paper)}
-    .resources .section-head p{color:#D6C7B7}
-    .resource-row{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
-    .resource-card{padding:25px;border:1px solid rgba(238,227,211,.2);border-radius:20px;background:rgba(255,255,255,.045)}
-    .resource-card h3{font:1.45rem var(--serif);font-weight:500;margin:0 0 8px;color:var(--paper)}
-    .resource-card p{font-size:.9rem;color:#D6C7B7;margin-bottom:18px}
-    .resource-card .button-light{background:var(--ivory);border-color:var(--ivory);color:var(--brown)}
-    .resource-card .button-primary{color:#fffaf4}
-    .soon{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;color:#D9C9B8;background:rgba(238,227,211,.08);border:1px solid rgba(238,227,211,.14);padding:8px 12px;border-radius:99px}
-    .soon i{width:7px;height:7px;border-radius:50%;background:var(--sand)}
-    .closing{padding:68px 0 80px;text-align:center}
-    .closing .eyebrow{justify-content:center}
-    .closing h2{font:clamp(2.4rem,5vw,4.2rem)/1.03 var(--serif);font-weight:500;letter-spacing:-.04em;max-width:760px;margin:17px auto;color:var(--brown)}
-    .closing p{color:var(--muted);max-width:600px;margin:0 auto 23px}
-    footer{border-top:1px solid var(--line);padding:20px 0 26px;color:var(--muted);font-size:.78rem}
-    .footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    @media(max-width:760px){
-      .wrap{width:min(100% - 30px,600px)}
-      .topbar{padding:15px 0}
-      .top-link{font-size:.78rem}
-      .hero{grid-template-columns:1fr;gap:0;padding:44px 0 40px;min-height:auto}
-      h1{font-size:clamp(3.25rem,16vw,5.3rem)}
-      .art{min-height:290px;margin-top:2px}
-      .dandelion{width:min(330px,95%)}
-      .paper-note{right:4px;bottom:0}
-      .intro-grid{grid-template-columns:1fr;gap:17px}
-      section{padding:64px 0}
-      .days{grid-template-columns:1fr}
-      .day-card{padding:23px 21px}
-      .resource-row{grid-template-columns:1fr}
-      .closing{padding:58px 0}
-    }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-  </style>
+  <link rel="preload" as="image" href="assets/arte-central-curso.jpg">
+  <link rel="stylesheet" href="assets/portal.css?v=redesign-01">
+  <script src="assets/portal.js?v=redesign-01" defer></script>
 </head>
 <body>
-  <header class="wrap topbar">
-    <a class="brand" href="https://www.inovapublica.com.br/" aria-label="Inova Pública, página inicial">
-      <span class="brand-mark" aria-hidden="true">✳</span>
-      <span><small>Inova Pública</small>Aprender para conversar</span>
-    </a>
-    <a class="top-link" href="#percurso">Conheça o percurso ↓</a>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Diga mesmo que doa, início">
+        <img src="assets/logo-inova.png" alt="">
+        <span>Inova Pública<small>Inovar é servir com propósito</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu-principal">Menu <span aria-hidden="true">☰</span></button>
+      <nav class="site-nav" id="menu-principal" aria-label="Navegação principal">
+        <a href="#inicio">Início</a><a href="#percurso">Encontros</a><a href="#materiais">Materiais</a><a href="#jeanne">Facilitadora</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="wrap hero" aria-labelledby="titulo">
-      <div class="hero-copy">
-        <span class="eyebrow">Curso • feedback e conversas difíceis</span>
-        <h1 id="titulo">Diga mesmo<br>que <em>doa.</em></h1>
-        <p class="lead">A coragem de falar com clareza. O cuidado de manter aberta a possibilidade de escuta, aprendizagem e mudança.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#percurso">Conhecer os encontros <span aria-hidden="true">↓</span></a>
-          <a class="button button-light" href="https://notebook.google.com/notebook/41f9f648-b92c-46b4-a08c-46b07037c9ea/preview" target="_blank" rel="noopener noreferrer">Converse com a Cora <span aria-hidden="true">↗</span></a>
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-topline reveal">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> Curso · Feedback e conversas difíceis</span>
+          <div class="partner-logos" aria-label="Realização: Conselho Nacional de Justiça e Inova Pública">
+            <img class="cnj-logo" src="https://www.cnj.jus.br/wp-content/uploads/2023/09/logo-cnj-preta-2023.png" alt="Conselho Nacional de Justiça">
+            <span class="logo-divider" aria-hidden="true"></span>
+            <span class="inova-lockup"><img src="assets/logo-inova.png" alt=""><b>Inova Pública</b></span>
+          </div>
         </div>
-      </div>
 
-      <div class="art" aria-hidden="true">
-        <svg class="dandelion" viewBox="0 0 440 470" role="img" aria-label="Ilustração botânica de um dente-de-leão">
-          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M244 441 C238 371 235 315 251 267 C260 239 269 213 271 181" stroke="#777B5B" stroke-width="3.2"/>
-            <path d="M239 397 C213 370 185 363 162 366 C181 381 208 394 238 399" stroke="#777B5B" stroke-width="2.3"/>
-            <path d="M240 421 C270 393 294 389 319 393 C302 407 273 419 240 423" stroke="#777B5B" stroke-width="2.2"/>
-            <path d="M251 275 C236 259 220 253 201 255 C215 270 233 277 251 279" stroke="#777B5B" stroke-width="1.8"/>
-            <path d="M271 181 C248 159 226 151 204 154" stroke="#A65E45" stroke-width="1.7"/>
-            <path d="M271 181 C248 170 229 170 211 177" stroke="#A65E45" stroke-width="1.5"/>
-            <path d="M271 181 C255 145 251 124 255 103" stroke="#A65E45" stroke-width="1.5"/>
-            <path d="M271 181 C271 143 282 119 298 102" stroke="#A65E45" stroke-width="1.5"/>
-            <path d="M271 181 C293 150 313 138 337 137" stroke="#A65E45" stroke-width="1.6"/>
-            <path d="M271 181 C308 171 333 176 350 190" stroke="#A65E45" stroke-width="1.5"/>
-            <path d="M271 181 C305 193 324 209 329 229" stroke="#A65E45" stroke-width="1.5"/>
-            <path d="M271 181 C291 211 294 234 287 253" stroke="#A65E45" stroke-width="1.5"/>
-            <path d="M271 181 C268 215 258 236 244 249" stroke="#A65E45" stroke-width="1.5"/>
-            <path d="M271 181 C242 203 219 209 198 204" stroke="#A65E45" stroke-width="1.5"/>
-            <path d="M271 181 C236 182 214 174 199 159" stroke="#A65E45" stroke-width="1.5"/>
-            <path d="M255 103 l-8 -8 m8 8 1 -12" stroke="#777B5B" stroke-width="1.2"/>
-            <path d="M298 102 l-1 -11 m1 11 9 -7" stroke="#777B5B" stroke-width="1.2"/>
-            <path d="M337 137 l3 -11 m-3 11 11 -3" stroke="#777B5B" stroke-width="1.2"/>
-            <path d="M350 190 l9 -7 m-9 7 11 3" stroke="#777B5B" stroke-width="1.2"/>
-            <path d="M329 229 l10 -1 m-10 1 7 8" stroke="#777B5B" stroke-width="1.2"/>
-            <path d="M287 253 l6 9 m-6 -9 -4 11" stroke="#777B5B" stroke-width="1.2"/>
-            <path d="M244 249 l-7 9 m7 -9 -11 1" stroke="#777B5B" stroke-width="1.2"/>
-            <path d="M198 204 l-11 2 m11 -2 -7 -8" stroke="#777B5B" stroke-width="1.2"/>
-            <path d="M204 154 l-10 -7 m10 7 0 -11" stroke="#777B5B" stroke-width="1.2"/>
-            <path d="M211 177 l-11 1 m11 -1 -8 -8" stroke="#777B5B" stroke-width="1.2"/>
-          </g>
-          <circle cx="271" cy="181" r="5.5" fill="#A65E45"/>
-          <g fill="#777B5B">
-            <circle cx="187" cy="122" r="2.2"/><circle cx="172" cy="106" r="1.6"/>
-            <circle cx="357" cy="117" r="2"/><circle cx="382" cy="137" r="1.6"/>
-            <circle cx="368" cy="236" r="2.2"/><circle cx="390" cy="257" r="1.4"/>
-            <circle cx="222" cy="91" r="1.7"/><circle cx="327" cy="75" r="1.8"/>
-          </g>
-          <g fill="none" stroke="#777B5B" stroke-width="1.3" stroke-linecap="round">
-            <path d="M187 122l-5-8m5 8 7-5"/><path d="M357 117l-3-8m3 8 8-4"/>
-            <path d="M368 236l7-6m-7 6 8 3"/><path d="M327 75l1-8m-1 8 7-5"/>
-          </g>
-          <path d="M146 444 C190 434 232 437 278 448 C316 457 351 455 388 443" fill="none" stroke="#D8B89C" stroke-width="2" opacity=".7"/>
-        </svg>
-        <span class="paper-note">verdade com vínculo</span>
+        <div class="hero-copy reveal">
+          <p class="hero-kicker">Coragem para falar. Presença para escutar.</p>
+          <h1>Diga mesmo<br>que <em>doa.</em></h1>
+          <p class="hero-lead">Conversas de feedback que fortalecem relações.</p>
+          <p class="hero-description">Um convite para dizer o que precisa ser dito com clareza, responsabilidade e cuidado, sem abrir mão do vínculo e da dignidade de quem participa da conversa.</p>
+          <div class="actions">
+            <a class="button primary" href="#percurso">Entrar no percurso <span aria-hidden="true">↓</span></a>
+            <a class="button outline" href="https://notebook.google.com/notebook/41f9f648-b92c-46b4-a08c-46b07037c9ea/preview" target="_blank" rel="noopener noreferrer">Converse com a Cora <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <figure class="key-visual reveal">
+          <span class="visual-corner visual-corner-one" aria-hidden="true"></span><span class="visual-corner visual-corner-two" aria-hidden="true"></span>
+          <img src="assets/arte-central-curso.jpg" alt="Ilustração do curso Diga, mesmo que doa: pessoas conversam com abertura e cuidado; aparecem o CNJ, a Inova Pública e um dente-de-leão ao fundo.">
+          <figcaption>Falar com verdade também pode ser um gesto de cuidado.</figcaption>
+        </figure>
+        <div class="hero-bottomline"><span>Uma formação para relações de trabalho mais honestas e humanas</span><a href="#essencia">Conheça a proposta <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <div class="seed seed-a" aria-hidden="true">✳</div><div class="seed seed-b" aria-hidden="true">✧</div><div class="seed seed-c" aria-hidden="true">✳</div>
+    </section>
+
+    <section class="essence section" id="essencia">
+      <div class="container essence-grid">
+        <div class="section-heading reveal"><p class="eyebrow dark"><span class="eyebrow-dot"></span> A essência do curso</p><h2>Clareza não precisa ferir.<br><em>Cuidado não precisa calar.</em></h2></div>
+        <p class="essence-copy reveal">Feedback é uma conversa com impacto real. Quando há intenção, escuta e método, a franqueza deixa de ser descarga e se torna oportunidade de entendimento, desenvolvimento e mudança.</p>
+      </div>
+      <div class="container principles reveal">
+        <article class="principle"><span>01</span><div><h3>Perceber</h3><p>Separar fatos de interpretações e reconhecer o que está em jogo.</p></div></article>
+        <article class="principle"><span>02</span><div><h3>Escutar</h3><p>Considerar necessidades, emoções e perspectivas diferentes.</p></div></article>
+        <article class="principle"><span>03</span><div><h3>Conversar</h3><p>Dar e receber feedback com clareza, responsabilidade e respeito.</p></div></article>
       </div>
     </section>
 
-    <div class="intro-band">
-      <div class="wrap intro-grid">
-        <div class="intro-item"><span class="intro-num">01</span><div><strong>Perceber</strong><span>Separar fatos de interpretações e reconhecer o que está em jogo.</span></div></div>
-        <div class="intro-item"><span class="intro-num">02</span><div><strong>Escutar</strong><span>Considerar necessidades, emoções e perspectivas diferentes.</span></div></div>
-        <div class="intro-item"><span class="intro-num">03</span><div><strong>Conversar</strong><span>Dar e receber feedback com clareza, responsabilidade e respeito.</span></div></div>
-      </div>
-    </div>
-
-    <section class="wrap" id="percurso" aria-labelledby="percurso-titulo">
-      <div class="section-head">
-        <span class="eyebrow">Um percurso em quatro encontros</span>
-        <h2 id="percurso-titulo">Conversas que pedem coragem também pedem método.</h2>
-        <p>Os temas seguem a estrutura dos materiais do curso. Cada encontro tem seu próprio botão para baixar os slides em PDF.</p>
-      </div>
-
-      <div class="days">
-        <article class="day-card">
-          <div class="day-kicker"><span>Dia 1</span><span class="range">36 slides</span></div>
-          <h3>Entender o feedback e abrir a conversa</h3>
-          <p>Por que o feedback importa, o que nos impede de conversar e como começar a transformar julgamento em diálogo.</p>
-          <ul class="topic-list">
-            <li>Aula 01</li><li>Enquadramento</li><li>Alinhando conceitos</li><li>Definição</li>
-            <li>Importância</li><li>Por que não passamos feedback?</li><li>Categorização do feedback</li><li>Giomar x Isobel</li>
-          </ul>
-          <div class="day-note">Percurso: percepção, propósito e abertura para conversas honestas.</div>
-          <a class="button button-primary day-download" href="./slides/slides-dia-01.pdf" download="Diga-mesmo-que-doa-Dia-1.pdf">Baixar slides do Dia 1 <span aria-hidden="true">↓</span></a>
-        </article>
-
-        <article class="day-card">
-          <div class="day-kicker"><span>Dia 2</span><span class="range">53 slides</span></div>
-          <h3>Escutar, nomear e construir entendimento</h3>
-          <p>Explorar diferentes perspectivas, reconhecer necessidades e praticar princípios da comunicação não violenta.</p>
-          <ul class="topic-list">
-            <li>Aula 2</li><li>Josiane x Valdeci</li><li>Comunicação não violenta (CNV)</li>
-          </ul>
-          <div class="day-note">Percurso: escuta, sentimentos, necessidades e pedidos claros.</div>
-          <a class="button button-primary day-download" href="./slides/slides-dia-02.pdf" download="Diga-mesmo-que-doa-Dia-2.pdf">Baixar slides do Dia 2 <span aria-hidden="true">↓</span></a>
-        </article>
-
-        <article class="day-card">
-          <div class="day-kicker"><span>Dia 3</span><span class="range">37 slides</span></div>
-          <h3>Praticar o feedback em situações reais</h3>
-          <p>Retomar conceitos e aprofundar a prática por meio de exercícios, casos e conversas guiadas.</p>
-          <ul class="topic-list">
-            <li>Aula 3</li>
-          </ul>
-          <div class="day-note">Percurso: transformar repertório em ação e aprendizagem.</div>
-          <a class="button button-primary day-download" href="./slides/slides-dia-03.pdf" download="Diga-mesmo-que-doa-Dia-3.pdf">Baixar slides do Dia 3 <span aria-hidden="true">↓</span></a>
-        </article>
-
-        <article class="day-card">
-          <div class="day-kicker"><span>Dia 4</span><span class="range">38 slides</span></div>
-          <h3>Falar entre pares e também para cima</h3>
-          <p>Aplicar os aprendizados a relações de trabalho diversas, incluindo o feedback ascendente.</p>
-          <ul class="topic-list">
-            <li>Aula 4</li><li>Giomar x Paco</li><li>Fabiana x Giomar</li><li>Feedback ascendente</li><li>Giomar x Joaquim</li>
-          </ul>
-          <div class="day-note">Percurso: responsabilidade compartilhada e diálogo em todas as direções.</div>
-          <a class="button button-primary day-download" href="./slides/slides-dia-04.pdf" download="Diga-mesmo-que-doa-Dia-4.pdf">Baixar slides do Dia 4 <span aria-hidden="true">↓</span></a>
-        </article>
-      </div>
-    </section>
-
-    <section class="resources" id="materiais" aria-labelledby="materiais-titulo">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow" style="color:#D8B89C">Materiais e apoio</span>
-          <h2 id="materiais-titulo">Um espaço para continuar a conversa.</h2>
-          <p>Os acessos aos arquivos por encontro serão incorporados aqui quando os materiais estiverem organizados em versões próprias para consulta.</p>
-        </div>
-        <div class="resource-row">
-          <article class="resource-card">
-            <h3>Slides dos encontros em PDF</h3>
-            <p>Os quatro arquivos estão separados por dia. Use o botão do encontro correspondente para baixar a apresentação.</p>
-            <a class="button button-light" href="#percurso">Ver os encontros <span aria-hidden="true">↑</span></a>
-          </article>
-          <article class="resource-card">
-            <h3>Cora</h3>
-            <p>Assistente de IA para apoiar reflexões sobre feedback, comunicação não violenta e conversas difíceis. O acesso pode depender das permissões da conta Google.</p>
-            <a class="button button-light" href="https://notebook.google.com/notebook/41f9f648-b92c-46b4-a08c-46b07037c9ea/preview" target="_blank" rel="noopener noreferrer">Converse com a Cora <span aria-hidden="true">↗</span></a>
-          </article>
+    <section class="journey section" id="percurso">
+      <div class="container">
+        <div class="section-heading centered reveal"><p class="eyebrow dark"><span class="eyebrow-dot"></span> Jornada do curso</p><h2>Quatro encontros.<br><em>Uma conversa de cada vez.</em></h2><p>Retome os conteúdos, acompanhe as atividades e baixe os slides de cada dia.</p></div>
+        <div class="days">
+          <article class="day-card day-one reveal"><div class="day-head"><span class="day-number">01</span><span class="day-meta">Dia 1 · 36 slides</span></div><h3>Entender o feedback e abrir a conversa</h3><p>Por que o feedback importa, o que nos impede de conversar e como começar a transformar julgamento em diálogo.</p><ul class="topic-list"><li>Aula 01</li><li>Enquadramento e conceitos</li><li>Importância do feedback</li><li>Por que não passamos feedback?</li><li>Giomar x Isobel</li></ul><a class="button download" href="./slides/slides-dia-01.pdf" download="Diga-mesmo-que-doa-Dia-1.pdf">Baixar slides do Dia 1 <span aria-hidden="true">↓</span></a><span class="card-spark" aria-hidden="true">✳</span></article>
+          <article class="day-card day-two reveal"><div class="day-head"><span class="day-number">02</span><span class="day-meta">Dia 2 · 53 slides</span></div><h3>Escutar, nomear e construir entendimento</h3><p>Explorar diferentes perspectivas, reconhecer necessidades e praticar princípios da comunicação não violenta.</p><ul class="topic-list"><li>Aula 2</li><li>Josiane x Valdeci</li><li>Comunicação não violenta</li><li>Sentimentos e necessidades</li></ul><a class="button download" href="./slides/slides-dia-02.pdf" download="Diga-mesmo-que-doa-Dia-2.pdf">Baixar slides do Dia 2 <span aria-hidden="true">↓</span></a><span class="card-spark" aria-hidden="true">✧</span></article>
+          <article class="day-card day-three reveal"><div class="day-head"><span class="day-number">03</span><span class="day-meta">Dia 3 · 37 slides</span></div><h3>Praticar o feedback em situações reais</h3><p>Retomar conceitos e aprofundar a prática por meio de exercícios, casos e conversas guiadas.</p><ul class="topic-list"><li>Aula 3</li><li>Prática orientada</li><li>Aplicação no cotidiano</li></ul><a class="button download" href="./slides/slides-dia-03.pdf" download="Diga-mesmo-que-doa-Dia-3.pdf">Baixar slides do Dia 3 <span aria-hidden="true">↓</span></a><span class="card-spark" aria-hidden="true">✳</span></article>
+          <article class="day-card day-four reveal"><div class="day-head"><span class="day-number">04</span><span class="day-meta">Dia 4 · 38 slides</span></div><h3>Falar entre pares e também para cima</h3><p>Aplicar os aprendizados a relações de trabalho diversas, incluindo o feedback ascendente.</p><ul class="topic-list"><li>Aula 4</li><li>Giomar x Paco</li><li>Fabiana x Giomar</li><li>Feedback ascendente</li><li>Giomar x Joaquim</li></ul><a class="button download" href="./slides/slides-dia-04.pdf" download="Diga-mesmo-que-doa-Dia-4.pdf">Baixar slides do Dia 4 <span aria-hidden="true">↓</span></a><span class="card-spark" aria-hidden="true">✧</span></article>
         </div>
       </div>
     </section>
 
-    <section class="wrap closing">
-      <span class="eyebrow">Diga mesmo que doa</span>
-      <h2>Clareza não precisa ferir. Cuidado não precisa silenciar.</h2>
-      <p>O desafio é sustentar as duas coisas na mesma conversa: dizer o que precisa ser dito e preservar a dignidade de quem escuta.</p>
-      <a class="button button-primary" href="#percurso">Rever o percurso <span aria-hidden="true">↑</span></a>
+    <section class="resources section" id="materiais">
+      <div class="container resources-panel reveal">
+        <div class="resource-copy"><p class="eyebrow"><span class="eyebrow-dot"></span> Materiais e apoio</p><h2>A conversa continua<br>depois do encontro.</h2><p>Use os conteúdos como ponto de partida para observar, preparar e conduzir conversas importantes no trabalho.</p></div>
+        <article class="cora-card"><div class="cora-mark" aria-hidden="true">C</div><div><span class="small-label">Assistente de IA do curso</span><h3>Converse com a Cora</h3><p>Uma companhia para refletir sobre feedback, comunicação não violenta e conversas difíceis, com coragem e cuidado.</p><a class="button light" href="https://notebook.google.com/notebook/41f9f648-b92c-46b4-a08c-46b07037c9ea/preview" target="_blank" rel="noopener noreferrer">Acessar a Cora <span aria-hidden="true">↗</span></a><small>O acesso pode depender das permissões da sua conta Google.</small></div></article>
+      </div>
     </section>
+
+    <section class="facilitator section" id="jeanne">
+      <div class="container facilitator-panel reveal">
+        <div class="facilitator-photo"><img src="assets/jeanne-nogueira.png" alt="Jeanne Nogueira"></div>
+        <div class="facilitator-copy"><p class="eyebrow dark"><span class="eyebrow-dot"></span> Quem conduz a conversa</p><h2>Jeanne Nogueira</h2><p class="facilitator-role">Pedagoga · Desenvolvimento de Pessoas</p><p>Atua há mais de 10 anos no desenvolvimento de pessoas, comunicação eficaz, cultura organizacional e formação de lideranças no serviço público. É pedagoga pela UnB, pós-graduada em Gestão de Pessoas e mestre em Gestão Estratégica de Organizações.</p><p>Formada pelo Instituto de Formação de Instrutores de Massaru Ogata, tem capacitação em Estruturas Libertadoras e metodologias ativas. Construiu sua trajetória em instituições federais como o Departamento de Polícia Federal, o TJDFT e o STJ, onde atuou como gestora da área de Desenvolvimento Gerencial.</p><span class="curriculum-note">Experiência que aproxima conteúdo, prática e realidade do serviço público.</span></div>
+      </div>
+    </section>
+
+    <section class="closing-band"><div class="container closing-inner reveal"><span class="closing-flower" aria-hidden="true">✳</span><p>Que a coragem abra espaço para a verdade,<br>e que o cuidado ajude a relação a continuar.</p><a href="#inicio">Voltar ao início <span aria-hidden="true">↑</span></a></div></section>
   </main>
 
-  <footer>
-    <div class="wrap footer-inner">
-      <span>Inova Pública · Desenvolvimento humano no setor público</span>
-      <a href="https://www.inovapublica.com.br/">Voltar ao site institucional</a>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container footer-inner"><div class="footer-brand"><img src="assets/logo-inova.png" alt=""><span>Inova Pública<small>Desenvolvimento humano no setor público</small></span></div><div class="footer-partners"><img src="https://www.cnj.jus.br/wp-content/uploads/2023/09/logo-cnj-branca-2023.png" alt="Conselho Nacional de Justiça"><span aria-hidden="true"></span><a href="https://www.inovapublica.com.br/">Voltar ao site da Inova Pública ↗</a></div><small class="footer-credit">Diga mesmo que doa · Conversas de feedback que fortalecem relações</small></div></footer>
 </body>
 </html>
