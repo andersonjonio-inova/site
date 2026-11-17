@@ -37,3 +37,22 @@
 /* Marcas parceiras no cabeçalho */
 .partnership-brand{gap:.8rem}.partnership-brand .cnj-header-logo{width:82px;height:42px;flex:0 0 auto;object-fit:contain}.partnership-brand .inova-header-logo{width:38px;height:38px;flex:0 0 auto}
 @media(max-width:640px){.partnership-brand{gap:.55rem}.partnership-brand .cnj-header-logo{width:62px;height:34px}.partnership-brand .inova-header-logo{width:30px;height:30px}.header-inner{gap:.5rem}}
+
+/* Seção em destaque da assistente Jê, inspirada no layout do curso de comunicação do TJMS. */
+.je-section{display:grid;grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);align-items:stretch;overflow:hidden;border:1px solid rgba(69,53,47,.12);border-radius:1.6rem;background:#f7f0e5;box-shadow:0 24px 64px rgba(42,14,25,.2)}
+.je-cover-wrap{display:flex;align-items:center;justify-content:center;min-width:0;padding:clamp(1.2rem,3.5vw,2.8rem);background:linear-gradient(160deg,#fbf6ed,#f0e4d2)}
+.je-cover{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:.8rem;box-shadow:0 16px 36px rgba(54,30,24,.16)}
+.je-intro{padding:clamp(1.6rem,4vw,3.4rem);background:linear-gradient(135deg,#57132d 0%,#741c3d 55%,#8e3d42 100%);color:#fff7e9}
+.je-intro>.eyebrow{color:#f1d28f}
+.je-intro h2{margin:.2rem 0 .85rem;color:#fff7e9;font:500 clamp(2.2rem,4.4vw,3.75rem)/1.02 var(--serif);letter-spacing:-.04em}
+.je-intro h2 em{color:#efd083;font-weight:400}
+.je-description{max-width:620px;margin:0 0 1.15rem;color:rgba(255,247,233,.88);font-size:1rem;line-height:1.55}
+.je-prompts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;margin:0 0 1rem}
+.je-prompts p{margin:0;min-height:64px;padding:.8rem .9rem;border:1px solid rgba(255,247,233,.24);border-radius:.7rem;background:rgba(255,247,233,.08);color:#fff9ef;font-size:.88rem;line-height:1.4}
+.je-note{margin:0 0 1rem;padding:.75rem .9rem;border-left:3px solid #e4b84b;background:rgba(255,247,233,.09);color:rgba(255,247,233,.84);font-size:.79rem;line-height:1.5}
+.button.je-cta{display:inline-flex;width:auto;align-items:center;gap:.65rem;background:#e2b64c;color:#452131;font-weight:850;text-decoration:none}
+.button.je-cta:hover{background:#f0cb70;transform:translateY(-2px)}
+.je-access-note{display:block;margin-top:.65rem;color:rgba(255,247,233,.68);font-size:.75rem}
+@media(max-width:820px){.je-section{grid-template-columns:1fr}.je-cover-wrap{padding:1.4rem}.je-cover{width:min(100%,620px)}}
+@media(max-width:640px){.je-section{border-radius:1.2rem}.je-cover-wrap{padding:1rem}.je-cover{border-radius:.55rem}.je-intro{padding:1.3rem}.je-intro h2{font-size:2.35rem}.je-prompts{grid-template-columns:1fr}.je-prompts p{min-height:auto}.button.je-cta{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.button.je-cta{transition:none}}
