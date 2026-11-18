@@ -91,3 +91,18 @@
 .je-access-note{font-size:.8rem}
 @media(max-width:820px){.je-section{width:min(calc(100% - 2rem),720px)}.je-prompts{grid-template-columns:repeat(2,minmax(0,1fr))}.je-prompts p{min-height:96px}}
 @media(max-width:640px){#je.resources.section{padding:3rem 0}.je-section{width:calc(100% - 1.5rem)}.je-intro h2{font-size:2.5rem}.je-description{font-size:.96rem}.je-prompts{grid-template-columns:1fr;gap:.65rem}.je-prompts p{min-height:auto;padding:1rem}.button.je-cta{width:100%}}
+
+
+/* Presente de acesso à plataforma da Inova Pública */
+#plataforma-inova.platform-gift{padding:clamp(3rem,6vw,5rem) 0;background:linear-gradient(115deg,#d8ae67 0%,#e4c680 48%,#c99453 100%);color:#59142d}
+.platform-gift-panel{display:grid;grid-template-columns:minmax(150px,.36fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center;max-width:980px;margin-inline:auto;padding:clamp(1.5rem,4vw,3rem);border:1px solid rgba(89,20,45,.17);border-radius:1.5rem;background:rgba(255,250,238,.68);box-shadow:0 18px 48px rgba(69,35,23,.12)}
+.platform-gift-brand{display:flex;flex-direction:column;align-items:center;gap:.7rem;padding:1.25rem;border-radius:1rem;background:rgba(255,255,255,.76);color:#4b233f;font-weight:850;letter-spacing:.02em;text-align:center}
+.platform-gift-brand img{display:block;width:min(100%,110px);height:auto;object-fit:contain}
+.platform-gift-copy .eyebrow{color:#7b1b38}
+.platform-gift-copy h2{max-width:700px;margin:.2rem 0 .8rem;color:#59142d;font:500 clamp(2rem,4.2vw,3.4rem)/1.05 var(--serif);letter-spacing:-.035em}
+.platform-gift-copy h2 em{color:#a64b42;font-weight:400}
+.platform-gift-copy>p:not(.eyebrow){max-width:680px;margin:0 0 1.2rem;color:#641a32;font-size:1rem;line-height:1.6}
+.button.platform-gift-cta{display:inline-flex;min-height:52px;align-items:center;justify-content:center;gap:.65rem;padding:.9rem 1.25rem;border-radius:999px;background:#68162f;color:#fff6e7;font-weight:850;text-align:center;text-decoration:none;transition:transform .2s,background .2s}
+.button.platform-gift-cta:hover{transform:translateY(-2px);background:#501126}
+.platform-gift-copy>small{display:block;margin-top:.7rem;color:rgba(89,20,45,.78);font-size:.78rem}
+@media(max-width:640px){.platform-gift-panel{grid-template-columns:1fr;gap:1.3rem;padding:1.25rem}.platform-gift-brand{width:min(100%,240px);justify-self:center}.platform-gift-brand img{width:90px}.platform-gift-copy h2{font-size:2.35rem}.platform-gift-copy>p:not(.eyebrow){font-size:.94rem}.button.platform-gift-cta{width:100%}}
